@@ -44,7 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // Top Header
 
 const topHeader = document.getElementsByTagName('header');
-topHeader.appendChild();
+// topHeader.appendChild();
 
 // Nav Bar anchor tags
 let navBar = document.querySelectorAll("header a");
@@ -59,7 +59,7 @@ navBar.forEach((a) => a.style.color = 'green');
 
 // Slogan Header Text
 let slogan = document.querySelector(".cta-text h1");
-slogan.textContent = siteContent["cta"]["h1"];
+slogan.innerHTML = "Dom <br> is <br> Awesome";
 
 const titleBreak = document.createElement("br"); /* br element? */
  slogan.appendChild(titleBreak);
@@ -105,7 +105,7 @@ const infoHeader = document.querySelector('.contact h4');
 const infoText = document.querySelectorAll('.contact p');
 
 infoHeader.textContent = siteContent["contact"]['contact-h4']; /* br element? */
-infoText[0].textContent = siteContent['contact']['address'];
+infoText[0].innerHTML = "123 Way 456 Street <br> Somewhere, USA";
 infoText[1].textContent = siteContent['contact']['phone'];
 infoText[2].textContent = siteContent['contact']['email'];
 
