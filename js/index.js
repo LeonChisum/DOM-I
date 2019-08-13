@@ -36,7 +36,91 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
+window.onload = function(){
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+  // Example: Update the img src for the logo
+  let logo = document.getElementById("logo-img");
+  logo.setAttribute('src', siteContent["nav"]["img-src"])
+  
+  // Top Header
+  
+  const topPart = document.getElementsByTagName("header");
+  const bear = document.createElement("img");
+  const caveMan = document.createElement("img");
+  bear.src = "img/teddy.jpg"
+  caveMan.src = "img/caveman.jpg"
+  topPart[0].appendChild(bear);
+  topPart[0].prepend(caveMan);
+  
+  bear.style.width = "15%"
+  caveMan.style.width = "15%"
+  
+  
+  // Nav Bar anchor tags
+  let navBar = document.querySelectorAll("header a");
+  navBar[0].textContent = siteContent["nav"]["nav-item-1"];
+  navBar[1].textContent = siteContent["nav"]["nav-item-2"];
+  navBar[2].textContent = siteContent["nav"]["nav-item-3"];
+  navBar[3].textContent = siteContent["nav"]["nav-item-4"];
+  navBar[4].textContent = siteContent["nav"]["nav-item-5"];
+  navBar[5].textContent = siteContent["nav"]["nav-item-6"];
+  
+  navBar.forEach((a) => a.style.color = 'green');
+  
+  // Slogan Header Text
+  let slogan = document.querySelector(".cta-text h1");
+  slogan.innerHTML = "Dom <br> is <br> Awesome";
+  
+  const titleBreak = document.createElement("br"); /* br element? */
+   slogan.appendChild(titleBreak);
+  
+  // Slogan button
+  const sloganBtn = document.querySelector(".cta-text button");
+  sloganBtn.textContent = siteContent['cta']['button'];
+  
+  // Slogan Header Img
+   let sloganImg = document.getElementById("cta-img");
+   sloganImg.setAttribute('src', siteContent['cta']['img-src']);
+  
+  //  Main Content
+  const contentHeader = document.querySelectorAll('.text-content h4');
+  const contentText = document.querySelectorAll('.text-content p');
+  const contentImg = document.getElementById("middle-img");
+  
+  contentImg.src = siteContent["main-content"]['middle-img-src'];
+  
+  // Features
+  contentHeader[0].textContent = siteContent['main-content']['features-h4'];
+  contentText[0].textContent = siteContent['main-content']['features-content'];
+  
+  // About
+  contentHeader[1].textContent = siteContent['main-content']['about-h4'];
+  contentText[1].textContent = siteContent['main-content']['about-content'];
+  
+  // Services
+  contentHeader[2].textContent = siteContent['main-content']['services-h4'];
+  contentText[2].textContent = siteContent['main-content']['services-content'];
+  
+  // Product
+  contentHeader[3].textContent = siteContent['main-content']['product-h4'];
+  contentText[3].textContent = siteContent['main-content']['product-content'];
+  
+  // Vision
+  contentHeader[4].textContent = siteContent['main-content']['vision-h4'];
+  contentText[4].textContent = siteContent['main-content']['vision-content'];
+  
+  // Contact Section
+  
+  const infoHeader = document.querySelector('.contact h4');
+  const infoText = document.querySelectorAll('.contact p');
+  
+  infoHeader.textContent = siteContent["contact"]['contact-h4'];
+  infoText[0].innerHTML = "123 Way 456 Street <br> Somewhere, USA";
+  infoText[1].textContent = siteContent['contact']['phone'];
+  infoText[2].textContent = siteContent['contact']['email'];
+  
+  // Footer
+  const copyright = document.querySelector('footer p');
+  copyright.textContent = siteContent['footer']['copyright'];
+
+}  
